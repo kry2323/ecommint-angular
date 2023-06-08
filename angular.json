@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "ecommint"
+  "defaultProject": "ecommint",
+  "cli": {
+    "analytics": false
+  }
 }
