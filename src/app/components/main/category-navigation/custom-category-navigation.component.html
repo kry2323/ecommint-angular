@@ -1,0 +1,69 @@
+<div class="container">
+<div class="cx-navigation-ui flyout"  (mouseleave)='over($event)' (mouseenter)="onMouseEnter($event)" >
+<ng-container *rxLet="node$; let node">
+
+  <ng-container *rxFor="let child of node">
+    <ng-container *ngTemplateOutlet="nav; context: { node: child , depth: 0  }">
+    </ng-container>
+  </ng-container>
+
+<ng-template #nav let-node="node" let-depth="depth">
+  <nav
+    (keydown.esc)="back()"
+    (mouseenter)="onMouseEnter($event)"
+    (keydown.space)="toggleOpen($event)"
+    (keydown.esc)="back()"
+    [class]="depth === 0 ? 'dropdown-menu' : '' "
+  >
+
+  <ozd-generic-link
+  *ngIf="
+    node.url && (!node.children || node.children?.length === 0);
+    else heading
+  "
+  [url]="node.url"
+  [target]="node.target"
+>
+  {{ node.title }}
+  <cx-icon
+    *ngIf="flyout && node.children?.length > 0"
+  ></cx-icon>
+</ozd-generic-link>
+
+    <ng-template #heading>
+      <h5
+        [attr.aria-label]="node.title"
+        [attr.tabindex]="flyout && node.url ? 0 : -1"
+      >
+        <a (click)="goLink(node.url)" tabindex="-1">{{ node.title }}</a>
+        <span class="show-menubar">
+          {{ node.title }}
+        </span>
+      </h5>
+    </ng-template>
+
+    <div [class]="depth === 0 ? 'dropdown-menu-wrapper' : 'bottom' "  *ngIf="node.children?.length > 0">
+      <ozd-generic-link
+        *ngIf="node.url"
+        [url]="node.url"
+        [target]="node.target"
+        class="all"
+      >
+         {{node.title}} 
+      </ozd-generic-link>
+      <div
+        class="childs"
+        [attr.wrap-after]="node.children?.length > wrapAfter ? wrapAfter : null"
+        [attr.columns]="getColumnCount(node.children?.length)"
+      >
+        <ng-container *rxFor="let child of node.children">
+          <ng-container *ngTemplateOutlet="nav; context: { node: child, depth: depth + 1 }" >
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </nav>
+</ng-template>
+</ng-container>
+</div>
+</div>

@@ -1,0 +1,54 @@
+<ng-container>
+  <div class="zoom-image-container">
+    <ng-container *rxLet="product$; let product">
+      <a
+        [id]="galleryId"
+        class="MagicZoom"
+        [title]="mainZoomUrl?.altText"
+        [href]="product?.images[0].url"
+        data-options="hint: off;variableZoom: true;history: false;lazyZoom: true;"
+        data-mobile-options="hint: off;variableZoom: true;history: false;zoomMode: off;lazyZoom: true;"
+      >
+        <img [src]="product?.images[0].url" [alt]="product?.images[0].altText" (load)="imageLoaded($event)" [title]="mainZoomUrl?.altText" />
+      </a>
+    </ng-container>
+    <ng-template #defaultImageContainer>
+      <img [src]="defaultImage" alt="">
+    </ng-template>
+  </div>
+</ng-container>
+
+<ng-container >
+</ng-container>
+
+<ng-template #thumb let-item="item">
+  <div class="cx-media">
+    <a [attr.data-zoom-id]="galleryId"
+       [href]="item.container?.superZoom?.url"
+       [attr.data-image]="item.container?.superZoom?.url">
+      <img [src]="item.container?.thumbnail?.url">
+    </a>
+  </div>
+</ng-template>
+
+<ng-template #singleThumb>
+  <div class="thumbs" >
+    <div class="carousel-panel">
+      <div class="slides">
+        <div class="slide">
+          <div class="item">
+            <div class="cx-media">
+              <a
+                class="single-thumb"
+                [attr.data-zoom-id]="galleryId"
+                [href]="mainZoomUrl?.url"
+                [attr.data-image]="mainZoomUrl?.url">
+                <img [src]="mainZoomUrl?.url">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

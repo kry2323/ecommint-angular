@@ -1,0 +1,197 @@
+.zoom-image-container {
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.11);
+    width: 400px;
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+    }
+
+    & > img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    lib-ngx-image-zoom {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    & > .MagicZoom {
+      height: 600px;
+      width: 100%;
+
+      & > img {
+        max-height: 600px !important;
+        object-fit: contain;
+      }
+
+      @media only screen and (max-width: 992px) {
+        height: 450px;
+
+        & > img {
+          max-height: 450px !important;
+        }
+      }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .zoom-image-container {
+        height: 450px;
+        margin-bottom: 15px;
+    }
+}
+
+::ng-deep {
+    .page-preview {
+        .ngxImageZoomContainer {
+            width: 100% !important;
+            text-align: center;
+            height: 100% !important;
+
+            .ngxImageZoomThumbnail {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+
+  ozd-custom-product-images {
+        .thumbs {
+            display: block;
+            flex: none;
+            background-color: white;
+          .indicators, cx-carousel .indicators{
+            font-size: 9px;
+          }
+            .item {
+                cx-media, .cx-media {
+                    padding: 0;
+                    border-width: 1px;
+                    display: block;
+
+                    &.is-missing {
+                      min-height: unset;
+                      height: calc(100% - 1vw);
+
+                      & > img {
+                        display: none;
+                      }
+                    }
+                }
+
+                .cx-media {
+                  & a.is-active, & a:hover, & a.mz-thumb-selected {
+                    border-color: var(--cx-color-primary);
+                  }
+
+                  a {
+                    border: 1px solid var(--cx-color-light);
+                    width: 83px;
+
+                    &:not(.single-thumb) {
+                      @media (max-width: 992px) {
+                        width: auto;
+                      }
+                    }
+                  }
+
+                  margin: .5vw 0;
+                  cursor: pointer;
+
+                }
+            }
+
+            .carousel-panel {
+              touch-action: auto!important;
+              user-select: auto!important;
+              .previous {
+                & + .slides {
+                  margin-top: 0;
+                }
+              }
+                .slides {
+                    background-color: #fff;
+                    margin-top: -0.5vw;
+                }
+            }
+           .indicators button, cx-carousel .indicators button{
+            padding:4px;
+          }
+        }
+    }
+
+    .product-preview-modal {
+        .modal-dialog {
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+
+            .modal-content {
+                background-color: #000;
+                max-width: none;
+
+                .modal-body {
+                    padding: 0;
+                    height: 100vh;
+                    max-height: 100vh;
+                    min-height: 100vh;
+
+                    .close {
+                        border: solid 1px rgba(180,180,180,.6);
+                        color: rgba(180,180,180,1);
+                        bottom: auto;
+                        width: 40px;
+                        height: 40px;
+                        text-align: center;
+                        border-radius: 20px;
+                        top: 15px;
+                        right: 15px;
+                        position: absolute;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    .ngxImageZoomContainer {
+                        max-width: 100vh;
+                        height: 100vh !important;
+                        max-height: 100vh;
+                        width: 100% !important;
+                        vertical-align: middle;
+
+                        .ngxImageZoomThumbnail {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mz-figure {
+      max-width: 100%;
+
+      .mz-no-zoom {
+        max-height: 100%;
+      }
+    }
+
+    body main div a#zoom-product:not(.mz-no-rt-width-css) > .mz-figure:not(.mz-no-rt-width-css) > img {
+        max-height: 600px !important;
+        max-width: 100% !important;
+        @media only screen and (max-width: 992px) {
+          max-height: 450px !important;
+          width: auto !important;
+        }
+    }
+}
+::ng-deep.mz-zoom-window.mz-inner.mz-expanded{
+  height: auto;
+  display: contents;
+}

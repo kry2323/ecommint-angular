@@ -1,0 +1,122 @@
+::ng-deep .Footer {
+  padding: 20px 0px 20px;
+  .mobile-hidden {
+    span {
+    color: #494949;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 35px;
+      display: inline-block;
+    font-family: 'ralewayregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    cursor: default;
+    }
+   .wrapper a{
+      color: currentColor;
+      color: #838383;
+      font-size: 14px;
+      font-size: .875rem;
+      font-weight: bold;
+      font-family: 'ralewayregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+      font-style: normal;
+      display: inline-block;
+      vertical-align: top;
+      padding-right: 5px;
+      cursor: pointer;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .wrapper:first-child  nav .wrapper{
+      column-count: 2;
+    }
+  }
+  ozd-footer-navigation > span{
+    width:calc(100%/6);
+    padding: 0px 0px 0px 15px;
+    border-left: 1px solid rgba(201,201,200,0.3);
+    &:first-child {
+      width:calc(100%/3);
+      border-left: none;
+      .wrapper {column-count: 2;}
+
+    }
+  }
+}
+::ng-deep .mobile-visible{
+  width: 100%;
+  background-color: #fafafa;
+  .card{
+    background-color: #fafafa;
+  }
+  .card:not(:last-of-type){
+    width: 100%;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 0px;
+  }
+  .card-body{
+    padding:20px 0px 20px 15px;
+    width: auto;
+    ul{
+      margin-bottom: 0px;
+    }
+  }
+  .card:first-child  .card-body{
+    column-count: 2;
+  }
+  .card-header{
+       background-color: transparent;
+       padding: 5px 0px;
+       margin-bottom: 0!important;
+       font-family: 'ralewaybold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+       font-style: normal;
+       border-bottom: 1px solid #dedede;
+  }
+  .btn-link {
+    color: #494949;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: .875rem;
+    width: 100%;
+    text-align: left;
+    display: block;
+    max-height: 38px;
+  }
+  .icon{
+    float: right;
+  }
+  .collapsed .icon-combined-shape_21:before {
+    content: "\e92b";
+    color: #5b5b5b;
+
+  }
+   .icon-combined-shape_21:before {
+    content: "\e9cd";
+    font-family: 'icomoon';
+  }
+
+   .card-body a{
+    color: #838383;
+    font-size: 14px;
+    font-size: .875rem;
+    font-weight: bold;
+    font-family: 'ralewayregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 5px;
+    cursor: pointer;
+  }
+  }
+
+@media only screen and (max-width: 992px){
+  ::ng-deep footer{
+    background-color: #fafafa
+  }
+  ::ng-deep .Footer {
+   padding: 0px 0px 0px;
+  }
+}
+

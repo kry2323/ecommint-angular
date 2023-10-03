@@ -1,0 +1,46 @@
+::ng-deep {
+  .banner-carousel {
+      padding-left: 0;
+      padding-right: 0;
+  .item-img{
+    img{
+      display: block;
+      width: auto;
+      margin: auto;
+      height: 436px;
+      object-fit: fill;
+    }
+  }
+  }
+
+  @media (max-width: 768px) {
+      .banner-carousel {
+         .item-img{
+           img{
+             width: 100%;
+             height: auto;
+           }
+         }
+      }
+  }
+
+  @media (max-width: 575px) {
+      .container.banner-carousel {
+          max-width: 100vw;
+      }
+  }
+}
+
+.preload-image {
+margin-left: 60px;
+position: absolute;
+width: auto;
+height: 437px;
+object-fit: fill;
+@media screen and (max-width: 480px) {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  margin-left: 0;
+}
+}

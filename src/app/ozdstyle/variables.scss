@@ -1,0 +1,112 @@
+:root {
+    --image-list-box: 405px;
+    --layout-max-width: 1280px;
+    --owl-nav-space: -25px;
+    --cx-page-width-max:1310px;
+  }
+  $font-size-base: 1rem !default; //16px
+  $font-weight-base: 400 !default;
+  $line-height-base: 20px;
+  $body-color: #494949;
+  $container-sm: 540px;
+  $container-md: 720px;
+  $container-lg: 960px;
+  $container-xl: 1280px;
+
+  $grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1360px
+  );
+
+  $container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1280px,
+  );
+
+
+  @media (max-width: 576px) {
+
+    .container,
+    .container-sm {
+      max-width: 100vw;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  @media (min-width: 576px) {
+
+    .container,
+    .container-sm {
+      max-width: $container-sm;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .container,
+    .container-sm,
+    .container-md {
+      max-width: $container-md;
+    }
+  }
+
+  @media (min-width: 992px) {
+
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg {
+      max-width: $container-lg;
+    }
+  }
+
+  @media (min-width: 1360px) {
+
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl {
+      max-width: $container-xl;
+    }
+  }
+
+  // change theme-colors here
+  $primary: #ff6c0c;
+  $secondary: #3466d7 !default;
+  $success: #5dac06 !default;
+  $danger: #db0002 !default;
+  $warning: #ffc107 !default;
+  $info: #17a2b8 !default;
+  $light: #d3d6db !default;
+  $dark: #ff6c0c;
+  $background: #eee;
+  $inverse: #ffffff !default;
+  $text: #494949;
+  $transparent: transparent !default;
+  $visual-focus: #6d9df7 !default;
+  $black: #000 !default;
+
+  $theme-colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'danger': $danger,
+    'warning': $warning,
+    'info': $info,
+    'light': $light,
+    'dark': $dark,
+    'background': $background,
+    'inverse': $inverse,
+    'text': $text,
+    'transparent': $transparent,
+    'visual-focus': $visual-focus,
+  );
+
+  $body-color: $text;

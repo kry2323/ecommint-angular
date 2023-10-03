@@ -1,0 +1,102 @@
+.campaign-button-list {
+    display: table;
+    width: 100%;
+    margin-bottom: 15px;
+
+    &:empty {
+      display: none;
+    }
+
+    .campaign-button {
+        display: inline-block;
+        height: 50px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        box-shadow: 0px 2px 10px 0 rgba(0,0,0,0.11);
+        position: relative;
+        padding-left: 59px;
+        width: 180px;
+        vertical-align: top;
+
+        & ~ .campaign-button {
+            margin-left: 5px;
+        }
+
+        .icon {
+            font-size: 34px;
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+
+            .path1 {
+                position: relative;
+                z-index: 1;
+
+                &::before {
+                    opacity: 0.9 !important;
+                    color: #ff7400 !important;
+                    color: -moz-linear-gradient(top, #ff7400 0%, #ff7400 100%) !important;
+                    color: -webkit-linear-gradient(top, #ff7400 0%, #ff7400 100%) !important;
+                    color: linear-gradient(to bottom, #ff7400 0%, #ff7400 100%) !important;
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7400', endColorstr='#ff7400',GradientType=0 ) !important;
+                }
+            }
+
+            .path2 {
+                z-index: 2;
+            }
+        }
+
+        .col {
+            display: inline-block;
+            position: relative;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            padding: 0;
+
+            span {
+                font-family: 'montserratbold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+                font-style: normal;
+            }
+
+            span {
+                font-size: 14px;
+                color: var(--cx-color-text);
+                display: block;
+                font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+                line-height: 1;
+
+                ::ng-deep {
+                    .highlight {
+                        color: var(--cx-color-primary);
+                        font-weight: bold;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .estimated-shipment-date {
+        margin-bottom: 15px !important;
+    }
+}
+
+::ng-deep {
+    .campaign-button {
+        .col {
+            span {
+                b {
+                    color: var(--cx-color-primary);
+                    font-family: 'montserratbold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+                    display: block;
+                }
+            }
+        }
+    }
+}

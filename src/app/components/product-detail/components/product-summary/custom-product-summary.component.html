@@ -1,0 +1,22 @@
+<ng-container *rxLet="product$; let product">
+  <ng-container *rxLet="product?.displayStatus === 'DISPLAY'">
+
+      <ng-container *ngIf="product.discountRate > 0;else noDiscountTemplate">
+        <div class="price" aria-label="new item price">
+          <div class="top">
+              <span class="old-price" *ngIf="product.listPrice && product.listPrice.wholeNumber && product.listPrice.separator && product.listPrice.decimal && product.discountRate && product.discountRate >= 10">{{ product.listPrice.wholeNumber }}{{ product.listPrice.separator }}{{ product.listPrice.decimal }} {{ product.listPrice.currency }}</span>
+              <span class="discount" *ngIf="product.discountRate"></span>
+          </div>
+          <span class="current-price" *ngIf="product.price && product.price.wholeNumber && product.price.separator && product.price.decimal && product.price.currency">{{ product.price.wholeNumber }}{{ product.price.separator }}<em class="decimal">{{ product.price.decimal }}</em> <em class="ext">{{ product.price.currency }}</em></span>
+        </div>
+      </ng-container>
+      <ng-template #noDiscountTemplate>
+        <div class="price" aria-label="new item price">
+          <div class="current-price" *ngIf="product.price && product.price.wholeNumber && product.price.separator && product.price.decimal && product.price.currency">
+            {{ product.price.wholeNumber }}{{ product.price.separator }}<em class="decimal">{{ product.price.decimal }}</em> <em class="ext">{{ product.price.currency }}</em>
+          </div>
+        </div>
+      </ng-template>
+
+  </ng-container>
+</ng-container>

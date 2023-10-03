@@ -1,0 +1,28 @@
+<ng-container *rxLet="title$; let title">
+  <div class="container">
+    <div class="row">
+      <h3 class="carousel-title" *ngIf="title">{{ title }}</h3>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *rxLet="items$; let items">
+  <div class="container product-carousel">
+    <div class="row"
+         style="height: 455px">
+      <swiper-container
+        #swiperContainer
+        init="false">
+        <ng-container *rxFor="let item of items; trackBy: trackByFn">
+          <swiper-slide  lazy="true">
+            <ozd-custom-product-grid-item
+              [product]="item"
+            >
+            </ozd-custom-product-grid-item>
+          </swiper-slide>
+
+        </ng-container>
+      </swiper-container>
+    </div>
+  </div>
+</ng-container>

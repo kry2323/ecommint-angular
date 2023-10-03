@@ -1,0 +1,11 @@
+<ng-container *rxLet="data$; let data">
+  <ozd-generic-link
+    [url]="data.urlLink"
+    [target]="data.external ? '_blank' : null"
+    [title]="data.media?.altText"
+  >
+    <p *ngIf="data.headline" [innerHTML]="data.headline"></p>
+    <cx-media [container]="data.media" [alt]="data.name" ></cx-media>
+    <p *ngIf="data.content" [innerHTML]="data.content"></p>
+  </ozd-generic-link>
+</ng-container>

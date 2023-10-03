@@ -1,0 +1,303 @@
+::ng-deep cx-page-slot.MarketNavigationBar{
+  .flyout {
+    width: 100%;
+    position: relative;
+
+    .flyout.cx-navigation-ui {
+      display: flex;
+      justify-content: space-between;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+      & > nav {
+        position: static;
+        flex-shrink: 0;
+        flex-grow: 1;
+        padding-bottom: 10px;
+        padding-top: 10px;
+
+        //1.kırılım
+        h5 {
+          color: #494949;
+          font-size: 12px;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          text-transform: capitalize;
+          cursor: pointer;
+          text-align: center;
+          z-index: 9;
+          vertical-align: middle;
+          padding: 0px;
+          cursor: pointer;
+          margin-top: 0px;
+          display: block;
+
+          cx-icon {
+            display: none;
+          }
+
+        }
+
+        & > ozd-generic-link a {
+          color: #494949;
+          padding: 0;
+          font-size: 12px;
+          font-weight: 500;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          text-transform: capitalize;
+          cursor: pointer;
+          text-align: center;
+          z-index: 9;
+          vertical-align: middle;
+          line-height: 14px;
+        }
+
+        //bütün
+        &:hover > .wrapper {
+          width: 100%;
+          left: 0;
+          margin: auto;
+          margin-top: 12px;
+
+
+          & > .childs {
+            --gap: 1rem;
+            --columns: 4;
+            display: column;
+            columns: var(--columns);
+            gap: var(--gap);
+
+            & > nav {
+              -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+              page-break-inside: avoid; /* Firefox */
+              break-inside: avoid;
+              padding-bottom: var(--gap);
+
+              cx-generic-link a {
+                font-size: 13px;
+                color: #000000;
+                text-decoration: none !important;
+                font-weight: 500;
+              }
+
+              h5 {
+                display: none;
+              }
+
+              .wrapper {
+
+                & > ozd-generic-link {
+                  padding: 0px;
+                  text-decoration: none;
+
+                  .all {
+                    font-size: 13px;
+                    color: #000000;
+                    text-decoration: underline !important;
+                    font-weight: 500;
+
+                    &:hover {
+                      color:  var(--cx-color-primary);
+                    }
+
+                  }
+                }
+
+                //3.kırılım
+                .childs nav ozd-generic-link {
+                  padding: 0px 0px;
+
+                  a {
+                    color: #717070;
+                    font-size: 12px;
+                    line-height: 12px;
+                    font-weight: 500;
+
+                    &:hover {
+                      color: var(--cx-color-primary);
+                    }
+
+                  }
+                }
+
+              }
+
+            }
+
+          }
+
+          & > ozd-generic-link,
+          & > a {
+            display: none;
+          }
+
+        }
+
+        &:hover {
+          h5 {
+            color: var(--cx-color-primary);
+          }
+
+          border-bottom: 2px solid var(--cx-color-primary);
+          color:  var(--cx-color-primary);
+        }
+      }
+    }
+  }
+  .show-menubar {
+    display: none;
+  }
+}
+
+//respomsive
+::ng-deep.NavigationBar {
+  display: block;
+  background-color: #ffffff !important;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+  .flyout .cx-navigation-ui {
+    position: relative;
+    width: 100%;
+
+    & > nav {
+
+      h5 {
+        padding: 0.8rem;
+        font-size: 16px !important;
+        font-weight: 400;
+        color: #333;
+
+        cx-generic-link,
+        & > a {
+          display: none;
+        }
+
+        .show-menubar {
+        }
+
+      }
+
+      .wrapper {
+        background-color: #ffffff;
+        color: #333;
+
+        .all {
+          background-color:  var(--cx-color-primary);
+          text-decoration: none;
+          color: white;
+        }
+
+        .childs nav {
+          cx-generic-link a {
+            padding: 0.8rem;
+          }
+        }
+      }
+
+      cx-generic-link a {
+        padding: 0.8rem;
+        font-weight: normal;
+        color: #333;
+      }
+
+    }
+
+    .back h5 {
+      padding: 0.8rem;
+      color: #333;
+      font-size: 14px;
+
+      cx-icon {
+        color: #c3c3c3;
+        width: 15px;
+
+        &:before {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .show-menubar {
+      display: block;
+      width: 100%;
+
+      cx-icon {
+        float: right;
+        color: #848484;
+        width: 16px;
+
+        &:before {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  ozd-login-mobile ozd-navigation {
+    display: none;
+  }
+}
+
+.dropdown-menu-wrapper {
+  width: 100%;
+  display: none;
+  min-height: 500px;
+  left: 0;
+  position: absolute;
+  background: white;
+
+  .childs{
+    nav{
+      h5{
+        text-decoration: underline;
+        margin-left: 10px;
+        text-align: initial;
+        font-size: 15px;
+        a{
+          margin-left:9px
+        }
+      }
+    }
+  }
+
+}
+.dropdown-menu .dropdown-menu-wrapper.opened{
+  display: block;
+  div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 8px 10px;
+    nav{
+      margin:5px 0;
+    }
+  }
+  
+}
+
+cx-page-slot.MarketNavigationBar .flyout .flyout.ozd-navigation-ui > nav:hover > .dropdown-menu-wrapper{
+  width: 100%;
+  left: 0;
+  margin: auto;
+  margin-top: 12px;
+}
+
+.cx-navigation-ui ozd-generic-link.all, cx-navigation-ui ozd-generic-link.all{
+  text-decoration: underline;
+}
+.all{
+  text-decoration: underline;
+}
+.bottom div {
+  flex-direction: column;
+}
+.bottom h5{
+  text-decoration: none !important;
+  margin-left: 0px;
+  font-size: 12px !important;
+  a{
+    margin-left:0px !important  ;
+  color:gray;
+
+  }
+}

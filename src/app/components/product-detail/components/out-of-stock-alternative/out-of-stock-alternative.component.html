@@ -1,0 +1,17 @@
+<ng-container *rxLet="product$; let product">
+  <div class="out-of-stock-alternative">
+    <span class="text"><strong>Seçtiğim Ürünün Stoklarınızda Olmaması Halinde;</strong></span>
+    <div class="selection-list">
+      <div class="filter-check">
+        <input class="primary-r-c" type="radio" id="alternative-true" [(ngModel)]="alternativeRequested" (change)="changeAlternativeProduct()" [value]="true" name="alternative">
+        <label for="alternative-true"
+          class="filter-name">Alternatif İstiyorum.</label>
+      </div>
+      <div class="filter-check">
+        <input class="primary-r-c" type="radio" id="alternative-false" [(ngModel)]="alternativeRequested" (change)="changeAlternativeProduct()" [value]="false" name="alternative">
+        <label for="alternative-false"
+          class="filter-name">Alternatif İstemiyorum.</label>
+      </div>
+    </div>
+  </div>
+</ng-container>

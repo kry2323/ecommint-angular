@@ -1,0 +1,28 @@
+<div class="container" *rxLet="product$;let product">
+  <div class="row review-image-comment">
+    <div class="col-lg-3 image">
+      <h3 class="title"> {{product.name}}</h3>
+      <img [src]="product?.images[1].url">
+    </div>
+    <div class="col-lg-6">
+      <div class="product-star-top">
+      <div class="row">
+        <ng-container>
+          <div class="col">
+            <div class="row">
+              <div class="product-star col-md-6">
+                <span> </span>
+              </div>
+              <div class="col-md-5">
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+    </div>
+  </div>
+  <button class="btn btn-primary" >Yorum Yap</button>
+</div>

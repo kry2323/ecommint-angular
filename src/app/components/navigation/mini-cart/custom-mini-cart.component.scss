@@ -1,0 +1,771 @@
+::ng-deep.MarketHeaderCenterFull{
+  .head-card {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+    cursor: pointer;
+    margin-left: 25px;
+    padding: 8px 8px;
+    border-radius: 6px;
+    margin-top: 2px;
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    &:hover {
+      background-color: #e5e5e5;
+    }
+  }
+  .head-card .item {
+    display: inline-block;
+    vertical-align: middle;
+    color: #0b0b0b;
+    font-size: 12px;
+    font-family:'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .head-card .card-items {
+    display: inline-block;
+    position: relative;
+  }
+  .head-card .card-items .icon {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  ozd-custom-mini-cart .icon-combined-shape2:before {
+    content: "\e9ca";
+    color: #464646;
+  }
+  .head-card .card-items .count {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    border-radius: 36px;
+    height: 18px;
+    width: 18px;
+    background: var(--cx-color-primary);
+    color: white;
+    line-height: 18px;
+  }
+  .head-card .icon {
+    font-size: 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  [class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .header-basket {
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: solid 1px #f2f0f0;
+    width: 300px;
+    padding: 10px;
+    position: absolute;
+    right:0px;
+    z-index: 999;
+    box-shadow: 0 5px 21px 0 rgba(0,0,0,0.08);
+    display: none;
+    border:1px solid rgb(0,0,0,0.15);
+  }
+  .header-basket.active {
+    display: block;
+  }
+  .header-basket:after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    z-index: 999;
+    right: 34px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent white transparent;
+    filter: drop-shadow(0px -2px 0px #f4f2f2);
+  }
+  .header-basket .other-products .day-opportunity {
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+    margin-top: 0;
+    border-bottom: 1px solid #f4f2f2;
+    padding: 8px 0;
+  }
+  .day-opportunity {
+    position: relative;
+    right: auto;
+    top: auto;
+    z-index: 2;
+    width: 100%;
+    padding: 10px;
+    background: white;
+    display: inline-block;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.11);
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content {
+    margin-top: 0;
+  }
+  .day-opportunity .opportunity-content {
+    width: 100%;
+    text-align: left;
+    font-size: 0;
+    margin-top: 15px;
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content .opportunity-detail {
+    width: calc(100% - 65px);
+    height: auto;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    font-size: .875rem;
+    padding-left: 10px;
+    height: 182px;
+    position: relative;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .product-name {
+    display: block;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.12;
+    color: #494949;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .product-quantity {
+    display: block;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.12;
+    color: #494949;
+    margin-top: 5px;
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content figure {
+    width: 63px;
+    height: 80px;
+    background-repeat: no-repeat;
+  }
+  .day-opportunity .opportunity-content .opportunity-image {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+    height: 182px;
+    overflow: hidden;
+    background-position: top center;
+    background-size: contain;
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content .opportunity-detail .price {
+    margin-top: 5px;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .price {
+    display: block;
+    margin-top: 20px;
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content .opportunity-detail span {
+    font-size: 14px;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .price .current-price {
+    display: block;
+    color: #4a4a4a;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: 'montserratbold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    margin-top: 10px;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .price .current-price .decimal {
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 12px;
+    font-size: .75rem;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .price .current-price .currency {
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .header-basket .total-price {
+    display: inline-block;
+    width: 100%;
+    font-size: 0;
+    padding: 3px 0;
+  }
+  .header-basket .total-price .text {
+    display: inline-block;
+    color: #4a4a4a;
+    font-size: 14px;
+    width: 50%;
+    text-align: left;
+    font-family: 'montserratbold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .header-basket .total-price .current-price {
+    display: inline-block;
+    color: #4a4a4a;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: 'montserratbold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    width: 50%;
+    text-align: right;
+  }
+  .header-basket .total-price .current-price .decimal {
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 12px;
+  }
+  .header-basket .total-price .current-price .currency {
+    font-size: 18px;
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .header-basket .free-cargo-info {
+    margin: 0 -10px;
+    width: calc(100% + 20px);
+    padding: 15px 10px;
+  }
+  .free-cargo-info {
+    width: 100%;
+    padding: 20px 10px;
+    background: #d4eaff;
+  }
+  .free-cargo-info .info-bar {
+    position: relative;
+    width: 100%;
+  }
+  .icon-combined-shape2 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .head-card .count{
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    border-radius: 36px;
+    height: 18px;
+    width: 18px;
+    background: var(--cx-color-primary)c;
+    color: white;
+    line-height: 18px;
+  }
+  .free-cargo-info .info-bar .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    font-size: 33px;
+  }
+  .header-basket .free-cargo-info .info-bar span {
+    text-align: left;
+    font-family: "montserratbold", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 13px;
+  }
+  .free-cargo-info .info-bar span {
+    display: block;
+    padding-left: 55px;
+    font-size: 14px;
+    color: #4a4a4a;
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .free-cargo-info .progress-bar {
+    width: 100%;
+    margin-top: 20px;
+    background: white;
+    border-radius: 4px;
+    padding: 2px;
+  }
+  .free-cargo-info .progress-bar .progress-line {
+    height: 9px;
+    background: var(--cx-color-primary);
+    border-radius: 3px;
+    transition: all 150ms ease-in-out;
+  }
+  .header-basket .button-list {
+    display: inline-block;
+    margin: 0 -5px;
+    width: calc(100% + 10px);
+    margin-top: 8px;
+  }
+  .header-basket .button-list .button {
+    width: calc(50% - 2.5px);
+    margin-right: 5px;
+    font-family: 'ralewaybold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    font-size: 11px;
+  }
+  .header-basket .button-list .button.go-basket {
+    font-size: 12px;
+  }
+  .header-basket .button-list .button:last-child {
+    margin-right: 0;
+  }
+  .header-basket .button.orange {
+    margin-top: 0px!important;
+  }
+  .header-basket .button-list .button {
+    width: calc(50% - 2.5px);
+    margin-right: 5px;
+    font-family: 'ralewaybold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    font-size: 11px;
+  }
+  .button.orange {
+    background: var(--cx-color-primary);
+    color: white;
+    border: none;
+    margin-top: 11px;
+  }
+  .button {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 2px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    font-size: .75rem;
+    color: var(--cx-color-primary);
+    background: white;
+    font-family: 'ralewaybold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border: solid 1px var(--cx-color-primary);
+    transition: all 150ms ease-in-out;
+  }
+  a {
+    text-decoration: none;
+    color: #0b0b0b;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-weight: 500;
+  }
+  .header-basket[_ngcontent-serverApp-c296]:after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    z-index: 999;
+    right: 9px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent white transparent;
+    -webkit-filter: drop-shadow(0px -2px 0px #f4f2f2);
+    filter: drop-shadow(0px -2px 0px #f4f2f2);
+  }
+  ozd-custom-mini-cart{
+    position:relative;
+  }
+  .other-products{
+    max-height: 227px;
+    overflow-y: auto;
+  }
+}
+::ng-deep.MagazaHeaderCenterFull{
+    .head-card {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 0;
+      cursor: pointer;
+      margin-left: 25px;
+      padding: 6px 16px;
+      border-radius: 6px;
+      margin-top: 2px;
+      background-color: #f9f9f9;
+      box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+      &:hover{
+        background-color: #e5e5e5;
+      }
+    }
+  .head-card .item {
+    display: inline-block;
+    vertical-align: middle;
+    color: #0b0b0b;
+    font-size: 12px;
+    font-family:'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .head-card .card-items {
+    display: inline-block;
+    position: relative;
+  }
+  .head-card .card-items .icon {
+    font-size: 18px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .icon-combined-shape2:before {
+    content: "\e9ca";
+    color: #464646;
+  }
+  .head-card .card-items .count {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    border-radius: 36px;
+    height: 18px;
+    width: 18px;
+    background: #ff6c0c;
+    color: white;
+    line-height: 18px;
+  }
+  [class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .header-basket {
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: solid 1px #f2f0f0;
+    width: 300px;
+    padding: 10px;
+    position: absolute;
+    right:0px;
+    z-index: 999;
+    box-shadow: 0 5px 21px 0 rgba(0,0,0,0.08);
+    display: none;
+  }
+  .header-basket.active {
+    display: block;
+  }
+  .header-basket:after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    z-index: 999;
+    right: 34px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent white transparent;
+    filter: drop-shadow(0px -2px 0px #f4f2f2);
+  }
+  .header-basket .other-products .day-opportunity {
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+    margin-top: 0;
+    border-bottom: 1px solid #f4f2f2;
+    padding: 8px 0;
+  }
+  .day-opportunity {
+    position: relative;
+    right: auto;
+    top: auto;
+    z-index: 2;
+    width: 100%;
+    padding: 10px;
+    background: white;
+    display: inline-block;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.11);
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content {
+    margin-top: 0;
+  }
+  .day-opportunity .opportunity-content {
+    width: 100%;
+    text-align: left;
+    font-size: 0;
+    margin-top: 15px;
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content .opportunity-detail {
+    width: calc(100% - 65px);
+    height: auto;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    font-size: .875rem;
+    padding-left: 10px;
+    height: 182px;
+    position: relative;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .product-name {
+    display: block;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.12;
+    color: #494949;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .product-quantity {
+    display: block;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.12;
+    color: #494949;
+    margin-top: 5px;
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content figure {
+    width: 63px;
+    height: 80px;
+    background-repeat: no-repeat;
+  }
+  .day-opportunity .opportunity-content .opportunity-image {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+    height: 182px;
+    overflow: hidden;
+    background-position: top center;
+    background-size: contain;
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content .opportunity-detail .price {
+    margin-top: 5px;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .price {
+    display: block;
+    margin-top: 20px;
+  }
+  .header-basket .other-products .day-opportunity .opportunity-content .opportunity-detail span {
+    font-size: 14px;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .price .current-price {
+    display: block;
+    color: #4a4a4a;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: 'montserratbold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    margin-top: 10px;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .price .current-price .decimal {
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 12px;
+    font-size: .75rem;
+  }
+  .day-opportunity .opportunity-content .opportunity-detail .price .current-price .currency {
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .header-basket .total-price {
+    display: inline-block;
+    width: 100%;
+    font-size: 0;
+    padding: 3px 0;
+  }
+  .header-basket .total-price .text {
+    display: inline-block;
+    color: #4a4a4a;
+    font-size: 14px;
+    width: 50%;
+    text-align: left;
+    font-family: 'montserratbold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .header-basket .total-price .current-price {
+    display: inline-block;
+    color: #4a4a4a;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: 'montserratbold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    width: 50%;
+    text-align: right;
+  }
+  .header-basket .total-price .current-price .decimal {
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 12px;
+  }
+  .header-basket .total-price .current-price .currency {
+    font-size: 18px;
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .header-basket .free-cargo-info {
+    margin: 0 -10px;
+    width: calc(100% + 20px);
+    padding: 15px 10px;
+  }
+  .free-cargo-info {
+    width: 100%;
+    padding: 20px 10px;
+    background: #d4eaff;
+  }
+  .free-cargo-info .info-bar {
+    position: relative;
+    width: 100%;
+  }
+  .free-cargo-info .info-bar .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    font-size: 33px;
+  }
+  .header-basket .free-cargo-info .info-bar span {
+    text-align: left;
+    font-family: "montserratbold", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 13px;
+  }
+  .free-cargo-info .info-bar span {
+    display: block;
+    padding-left: 55px;
+    font-size: 14px;
+    color: #4a4a4a;
+    font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+  }
+  .free-cargo-info .progress-bar {
+    width: 100%;
+    margin-top: 20px;
+    background: white;
+    border-radius: 4px;
+    padding: 2px;
+  }
+  .free-cargo-info .progress-bar .progress-line {
+    height: 9px;
+    background: var(--cx-color-primary);
+    border-radius: 3px;
+    transition: all 150ms ease-in-out;
+  }
+  .header-basket .button-list {
+    display: inline-block;
+    margin: 0 -5px;
+    width: calc(100% + 10px);
+    margin-top: 8px;
+  }
+  .header-basket .button-list .button {
+    width: calc(50% - 2.5px);
+    margin-right: 5px;
+    font-family: 'ralewaybold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    font-size: 11px;
+  }
+  .header-basket .button-list .button.go-basket {
+    font-size: 12px;
+  }
+  .header-basket .button-list .button:last-child {
+    margin-right: 0;
+  }
+  .header-basket .button.orange {
+    margin-top: 0px!important;
+  }
+  .header-basket .button-list .button {
+    width: calc(50% - 2.5px);
+    margin-right: 5px;
+    font-family: 'ralewaybold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    font-size: 11px;
+  }
+  .button.orange {
+    background: var(--cx-color-primary);
+    color: white;
+    border: none;
+    margin-top: 11px;
+  }
+  .button {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 2px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    font-size: .75rem;
+    color: var(--cx-color-primary);
+    background: white;
+    font-family: 'ralewaybold', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-style: normal;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border: solid 1px var(--cx-color-primary);
+    transition: all 150ms ease-in-out;
+  }
+  a {
+    text-decoration: none;
+    color: #0b0b0b;
+    font-weight: 500;
+  }
+  .header-basket[_ngcontent-serverApp-c296]:after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    z-index: 999;
+    right: 9px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent white transparent;
+    -webkit-filter: drop-shadow(0px -2px 0px #f4f2f2);
+    filter: drop-shadow(0px -2px 0px #f4f2f2);
+  }
+  ozd-custom-mini-cart{
+    position:relative;
+  }
+  .other-products{
+    max-height: 227px;
+    overflow-y: auto;
+  }
+}
+.emptyCart{    font-size: 14px;
+  margin: 10px 0;
+  font-family: 'ralewaybold','Helvetica Neue','Helvetica',Arial,sans-serif;
+  color: #333;}
+.price {
+    margin-bottom: 0px;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+}
+.header-basket .other-products .day-opportunity .opportunity-content .opportunity-detail span {
+  font-size: 14px;
+  color: #494949;
+}
+.header-basket.container.active .other-products{
+  max-height: 227px;
+  overflow-y: auto;
+  @media (max-width: 992px) {
+    max-height: 140px;
+  }
+}
+.free-cargo-info .icon{
+  margin-top: 0!important;
+}
+.header-basket.container.active{
+  width: 300px!important;
+}

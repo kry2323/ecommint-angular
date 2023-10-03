@@ -1,0 +1,26 @@
+<ng-container >
+  <ng-template #popContent>
+    <div>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p class="mb-0">"Marketten Teslim Al" özelliğimiz aktif hale getirilmiştir.</p>
+      <p class="mb-0">Siparişinizi, seçtiğiniz teslimat zaman aralığında marketten teslim alabilirsiniz.</p>
+    </div>
+  </ng-template>
+  <button
+    class="delivery-button"
+    type="button"
+  >
+    <i class="icon icon-lokasyon-icon mr-1 mb-1"></i>
+    <ng-container >
+      <ng-container ></ng-container>
+      <ng-template #noCityTitle>Teslimat Adresi</ng-template>
+    </ng-container>
+    <ng-template #responsiveName>
+      <ng-container ></ng-container>
+      <ng-template #noCity><i class="icon-lokasyon-icon"></i> </ng-template>
+    </ng-template>
+    <span  class="city-name ml-2"></span>
+  </button>
+</ng-container>

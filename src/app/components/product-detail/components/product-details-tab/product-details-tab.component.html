@@ -1,0 +1,56 @@
+<ng-container *rxLet="product$; let product">
+    <div class="container">
+        <div class="row">
+            <div class="item-detail col-12 p-0" [innerHTML]="product?.description"></div>
+                <div class="col-xs-12 col-md-8">
+                    <div class="row">
+                    <div class="properties-box">
+
+                      <div class="property-item" *ngIf="product.content">
+                        <span class="attributeTitle"></span>
+                        <span class="attributeValue">: {{product.content}}</span>
+                      </div>
+
+                      <ng-container *ngIf="product?.displayStatus === 'DISPLAY'">
+                        <div class="property-item">
+                            <span class="attributeTitle">Stok Durumu</span>
+                            <span class="attributeValue">Stokta Var
+                                <ng-container *ngIf="product.stock.stockLevel > 0 && product.stock.stockLevelStatus !== 'outOfStock'; else stockLevelZero"></ng-container>
+                                <ng-template #stockLevelZero></ng-template>
+                            </span>
+                        </div>
+                      </ng-container>
+
+                        <div class="property-item">
+                            <span class="attributeTitle">Ürün Adı</span>
+                            <span class="attributeValue">  {{product.name}}</span>
+                        </div>
+
+                        <div class="property-item">
+                            <span class="attributeTitle">Ürün Kodu</span>
+                            <span class="attributeValue">: {{product.code}}</span>
+                        </div>
+                        <ng-container *ngFor="let item of product.properties">
+                            <div class="property-item">
+                                <span class="attributeTitle">{{ item.name }}</span>
+                                <span class="attributeValue">{{ item.value }}</span>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                    <div class="property-item" *ngIf="product.productionPlace">
+                        <span class="attributeTitle">Üretim Yeri</span>
+                        <span class="attributeValue"> {{product.productionPlace}} </span>
+                    </div>
+                    <ng-container *ngIf="product?.displayStatus === 'DISPLAY'">
+                      <div class="property-item" *ngIf="product.price && product.price.lastUpdateDate">
+                          <span class="attributeTitle">Fiyat Değişiklik Tarihi:</span>
+                          <span class="attributeValue">{{ product.price.lastUpdateDate }}</span>
+                      </div>
+                    </ng-container>
+                    <img *ngIf="product.domesticProduct" class="logo"  src="https://www.ozdilekteyim.com/assets/img/yerli_uretim_logo.png"  alt="yerli_uretim_logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

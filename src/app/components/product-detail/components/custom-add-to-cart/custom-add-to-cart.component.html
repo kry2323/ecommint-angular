@@ -1,0 +1,28 @@
+<ng-container >
+  <form (submit)="addToCart()" class="quantity-status">
+
+    <ng-container>
+      <ng-container >
+        <div class="quantity">
+          <button
+          class="btn btn-primary btn-block btn-add-cart"
+          type="submit"
+          [disabled]="quantity < 0 || quantity > maxQuantity"
+        >
+        Sepete Ekle
+        </button>
+        </div>
+      </ng-container>
+    </ng-container>
+  </form>
+
+</ng-container>
+
+
+<ng-container *ngIf="product">
+  <div class="navigation-button">
+    <button *ngIf="navCategory" class="button-style primary-button empty big">Tüm <b>{{ navCategory.name }}</b> Ürünleri »</button>
+    <button class="button-style primary-button empty big">Tüm <b>{{ product.brand }}</b> Ürünleri »</button>
+  </div>
+</ng-container>
+

@@ -1,0 +1,23 @@
+<ng-container *rxLet="product$ ; let product">
+  <span  ></span>
+  <div class="product-intro">
+    <div class="title">
+      <h1>{{product.name}} </h1>
+      <span>{{ product.code }}</span>
+    </div>
+    <div class="rating" *ngIf="product.averageRating">
+     
+
+      <button class="btn btn-link" (click)="showReviews()"><span class="count"></span></button>
+
+    </div>
+    <div class="no-rating" *ngIf="!product.averageRating">
+      <ng-container *ngIf="(isAuthenticated$ | async); else noAuthenticated">
+        <button class="btn btn-link btn-no-comment" (click)="showReviews()"></button>
+      </ng-container>
+      <ng-template #noAuthenticated>
+        <button class="btn btn-link btn-no-comment" ></button>
+      </ng-template>
+    </div>
+  </div>
+</ng-container>

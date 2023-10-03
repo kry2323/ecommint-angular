@@ -1,0 +1,36 @@
+%set-container-padding {
+    max-width: var(--layout-max-width);
+  }
+  
+  %set-container-fit {
+    max-width: var(--layout-max-width);
+  }
+  
+  cx-page-layout.LandingPage2Template {
+    cx-page-slot {
+      &.Section3 {
+        @extend %set-container-fit; 
+      }
+    }
+  }
+  
+  cx-page-layout.CategoryPageTemplate {
+    @extend %set-container-fit;
+  }
+  
+  .CartPageTemplate {
+    @extend %set-container-padding;
+  }
+  
+  .ProductDetailsPageTemplate {
+    cx-page-slot {
+      &.UpSelling,
+      &.CrossSelling {
+        @extend %set-container-fit;
+      }
+    }
+  }
+
+  cx-page-layout{
+    display: block;
+  }

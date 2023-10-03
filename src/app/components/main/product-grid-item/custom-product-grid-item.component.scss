@@ -1,0 +1,446 @@
+.carouselItem {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  height:100%;
+  position: relative;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.11);
+
+  .product-top-info {
+    height: 20px;
+    display: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 110;
+
+    ozd-product-list-add-to-wish-list {
+      margin-left: auto;
+    }
+  }
+
+  .image-container {
+    width: 100%;
+    position: relative;
+    @media screen and (max-width: 768px) {
+      padding-top: 10px;
+    }
+    &-ratio {
+
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      & > .item-img {
+        img {
+          width: 100%;
+          max-height: var(--image-list-box);
+          aspect-ratio: 270/405;
+          object-fit: scale-down;
+          @media screen and (max-width: 768px) {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+
+  .carousel-hover-change {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 100%;
+
+    .owl-dots {
+      height: 100%;
+      margin-right: 0;
+      margin-left: 0;
+
+      .owl-dot {
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .empty-dot-template {
+    height: 17px;
+  }
+
+  .product-item-info {
+    padding: 0 10px 10px;
+
+    @media screen and (max-width: 992px) {
+      padding: 10px 10px 10px;
+    }
+
+    cx-star-rating {
+      padding: 0;
+      margin-bottom: 5px;
+    }
+
+    .review-count {
+      display: inline-block;
+      color: #bdbdbd;
+      margin-left: 6px;
+      margin-top: 2px;
+      font-size: .775rem;
+    }
+
+    .color-area {
+      border: 1px solid #e8e8e8;
+      padding: 2px;
+      color: #212738;
+      font-size: .775rem;
+      line-height: 1;
+
+      .product-color {
+        width: 20px;
+        vertical-align: middle;
+        float: left;
+      }
+
+      & > span {
+        vertical-align: middle;
+        display: inline-block;
+        padding-top: 3px;
+      }
+    }
+
+    h4 {
+      width: 100%;
+
+      a {
+        height: 30px;
+        font-size: .775rem;
+        line-height: 1.2;
+        color: #494949;
+        text-align: left;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        display: block;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .price {
+      height: 44px;
+      margin-bottom: 7px;
+      display: flex;
+      line-height: 1;
+
+      .discount {
+        border-radius: 10px 0px;
+        background-color: #ffe200;
+        color: #212839;
+        font-weight: bold;
+        font-size: .875rem;
+        font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin-right: 8px;
+      }
+
+      .price-box {
+        margin-top: auto;
+
+        .old-price {
+          font-family:'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+          text-decoration:line-through;
+          font-size: .875rem;
+          color: #494949;
+          display: block;
+          padding-bottom: 9px;
+          padding-top: 3px;
+        }
+
+        .current-price {
+          color: #4a4a4a;
+          letter-spacing: -.01rem;
+          font-size: 0.85rem;
+          font-family:  'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+          font-weight: bold;
+
+            .decimal {
+              font-size: .75rem;
+              vertical-align: top;
+              font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+              font-weight: normal;
+
+            }
+            .currency {
+              font-size: .75rem;
+              font-family:'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+              font-weight: normal;
+            }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+  ozd-custom-product-grid-item {
+    .product-top-info {
+      ozd-product-list-add-to-wish-list {
+        & > .btn {
+          min-width: auto;
+          height: 32px;
+          width: 32px;
+          line-height: 0px;
+          background-color: white;
+          box-shadow: 0 1px 1px 1px rgb(166 166 166 / 40%);
+          border-radius: 50%;
+          display: block;
+          margin: 5px;
+          padding: 0px;
+
+          cx-icon {
+            position: relative;
+            font-size: 16px;
+            transition-duration: .2s;
+            -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+            @media (max-width: 992px) {
+              transition: none;
+            }
+          }
+
+          &:hover {
+            cx-icon {
+              font-size: 20px;
+              font-weight: 900;
+              @media (max-width: 992px) {
+                font-size: 16px;
+                font-weight: 400;
+              }
+            }
+          }
+
+        }
+      }
+    }
+
+    owl-carousel-o {
+      .owl-theme {
+        .owl-stage-outer {
+          cx-media {
+            img {
+              max-height: var(--image-list-box);
+              aspect-ratio: 270/405;
+              object-fit: scale-down;
+            }
+          }
+        }
+
+        .owl-dots {
+          line-height: 1;
+          height: 17px;
+          margin-top: 0 !important;
+
+          .owl-dot {
+            span {
+              width: 25px;
+              height: 2px;
+              margin: 0px 4px;
+            }
+          }
+        }
+      }
+    }
+
+    .product-item-info {
+      cx-star-rating {
+        .star {
+          font-size: 12px;
+          margin: 0 2.5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carouselItem {
+    display: inline-block;
+    width: 100% !important;
+    padding: 0px;
+
+    .product-item-info {
+      .price {
+        .discount {
+          padding: 14px 7px;
+          letter-spacing: -.01rem;
+        }
+
+        .price-box {
+          .current-price {
+            font-weight: bold;
+            letter-spacing: -.01rem;
+            font-size: 1rem;
+            font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+
+            .decimal {
+              font-weight: bold;
+              letter-spacing: -.01rem;
+              font-size: .75rem;
+              font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+            }
+
+            .ext {
+              font-weight: bold;
+              letter-spacing: -.01rem;
+              font-size: 1rem;
+              font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+cx-media {
+  &.is-missing {
+    background-image: url(/../assets/img/default.png);
+    aspect-ratio: 270/405;
+    object-fit: scale-down;
+    width: 100%;
+    max-height: var(--image-list-box);
+  }
+}
+
+.grid-footer {
+  height: 40px;
+  text-align: center;
+
+  ozd-item-counter {
+    display: block;
+    height: 40px;
+  }
+}
+
+.dot-flashing {
+  display: none;
+}
+
+.is-current {
+  &.is-pending {
+    text-align: center;
+
+    span {
+      display: none;
+    }
+
+    .dot-flashing {
+      display: inline-block;
+    }
+  }
+}
+
+.btn {
+  font-size: 1rem;
+  height: 40px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .carouselItem {
+    display: inline-block;
+    width: 100% !important;
+    min-height: 475px;
+    .product-item-info {
+      .price {
+        .discount {
+          padding: 14px 7px;
+          letter-spacing: -.01rem;
+        }
+
+        .price-box {
+          .current-price {
+            font-weight: bold;
+            letter-spacing: -.01rem;
+            font-size: 0.7rem;
+            font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+
+            .decimal {
+              font-weight: bold;
+              letter-spacing: -.01rem;
+              font-size: .75rem;
+              font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+            }
+
+            .ext {
+              font-weight: bold;
+              letter-spacing: -.01rem;
+              font-size: 1rem;
+              font-family: 'montserratregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-hover-change {
+      display: none;
+    }
+  }
+}
+
+.product-badge {
+  position: absolute;
+  bottom: 18px;
+  z-index: 99;
+
+  .indirimOrani {
+    &:empty {
+      display: none;
+    }
+
+    display: inline-block;
+    padding-left: 6px;
+    padding-right: 14px;
+    background: #0088ff;
+    color: #fff;
+    font-size: 0.75rem;
+    border-radius: 0 0 20px 0;
+    font-family: raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+}
+
+.grid-footer {
+  height: 40px;
+  text-align: center;
+
+  ozd-item-counter {
+    display: block;
+    height: 40px;
+  }
+}
+
+.dot-flashing {
+  display: none;
+}
+
+.is-current.is-pending {
+  text-align: center;
+
+  span {
+    display: none;
+  }
+
+  .dot-flashing {
+    display: inline-block;
+  }
+}

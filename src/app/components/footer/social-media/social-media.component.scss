@@ -1,0 +1,30 @@
+::ng-deep footer .SocialMedia{
+  display: inline-block;
+  width: 100%;
+  min-height: 88px;
+  background-color: #373737;
+  margin-top: 60px;
+  .social-list {
+    display: inline-block;
+    padding: 20px 0;
+    float: right;
+    .icon {
+      color: white !important;
+      font-size: 2rem;
+      vertical-align: middle;
+    }
+    .icon-fb-icon:before {
+      content: "\e941";
+      color: #ffffff;
+    }
+  }
+  .social-list a {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    margin-left: 10px;
+    text-align: center;
+    border: 1px solid white;
+    display: inline-block;
+  }
+}

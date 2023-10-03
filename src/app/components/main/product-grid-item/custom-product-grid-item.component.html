@@ -1,0 +1,68 @@
+<div class="carouselItem" *ngIf="product">
+  <div class="image-container">
+    <div class="image-container-ratio">
+      <ng-container >
+              <a class="item-img" [routerLink]="['market',product.customUrl]" >
+                <img [attr.data-src]="product?.images[0].url" class="load-lazy" alt="Image" appLazyLoad/>
+              </a>
+
+          <div class="carousel-hover-change">
+            <div class="row owl-dots">
+              <a
+                class="col item-img owl-dot"
+                tabindex="0"
+                [routerLink]="['/market',product.customUrl]"
+              ></a>
+            </div>
+          </div>
+      </ng-container>
+      <ng-template #primaryTemplate >
+        <a class="item-img" tabindex="0" [routerLink]="['/market',product.customUrl]">
+          <img [src]="getImageUrl()" [alt]="product.name" class="" loading="lazy"/>
+        </a>
+        <div class="empty-dot-template"></div>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="product-item-info">
+    <span class="review-count" *ngIf="product.numberOfReviews > 0">({{product.numberOfReviews}})</span>
+    <div *ngIf="!isStoreTypeMarket" class="d-inline">
+      <ng-container *ngIf="product?.variantCount > 1">
+        <div class="color-area" >
+          <img class="product-color" src="../../../../../../../assets/img/rgb-circle-1--v1.png" loading="lazy" >
+          <span>{{ product?.variantCount }}</span>
+        </div>
+      </ng-container>
+    </div>
+    <h4 class="ellipsis-row-2">
+      <a tabindex="0" [routerLink]="['/market',product.customUrl]">
+        {{ product?.name }}
+      </a>
+    </h4>
+    <div class="price">
+      <span class="discount" *ngIf="product.discountRate && product.discountRate >= 10">%{{ product.discountRate}}</span>
+      <div class="price-box">
+          <span class="old-price" *ngIf="product.discountRate && product.discountRate >= 10 && product.listPrice && product.listPrice.wholeNumber && product.listPrice.separator && product.listPrice.decimal && product.listPrice.currency">
+
+          </span>
+        <span class="current-price" *ngIf="product.price">
+          {{product.price.formattedValue}}
+                </span>
+      </div>
+    </div>
+    <div class="grid-footer" *ngIf="isStoreTypeMarket">
+
+      <ng-template #addProductTemplate>
+        <button
+          [attr.disabled]="product.stock?.stockLevelStatus === 'outOfStock' ? '' : null"
+          [class.is-pending]="!(cartLoaded$ | async)"
+          [class.is-current]="isCurrent"
+          class="btn add-button btn-primary btn-block"
+          type="button"
+        ><i class="dot-flashing"></i>
+        </button>
+      </ng-template>
+    </div>
+  </div>
+</div>

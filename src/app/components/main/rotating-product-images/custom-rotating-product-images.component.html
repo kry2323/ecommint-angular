@@ -1,0 +1,18 @@
+<div class="container rotating-brands-carousel">
+  <div class="row" style="height: 336px">
+    <ng-container *rxLet="items$; let items"  >
+      <swiper-container #swiperContainer2 init="false" class="col-12 p-0">
+        <ng-container *rxFor="let item of items">
+          <swiper-slide [width]="itemWidth" height="300" lazy="true">
+            <a [routerLink]="item.urlLink" title="">
+              <figure class="product-logo">
+                <img [src]="item?.media?.url" alt="Image" loading="lazy" 
+                />
+              </figure>
+            </a>
+          </swiper-slide>
+        </ng-container>
+      </swiper-container>
+    </ng-container>
+  </div>
+</div>

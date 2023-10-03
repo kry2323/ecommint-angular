@@ -1,0 +1,21 @@
+<div class="container banner-carousel" style="height: 500px">
+  <ng-container *rxLet="items$; let items " >
+        <img class="preload-image" #preloadImage [src]="items[0]?.media.url" alt="" fetchpriority="high">
+        <swiper-container #mainSwiperContainer init="false">
+          <ng-container  *rxFor="let item of items; let i = index">
+
+              <swiper-slide >
+                <ozd-generic-link
+                  class="item-img" tabindex="0"
+                  [url]="item.urlLink"
+                  [target]="item.external ? '_self' : null"
+                  [title]="item.media?.altText"
+                >
+                  <img appLazyLoad  class="load-lazy" [attr.data-src]="item?.media.url" alt="" >
+                </ozd-generic-link>
+              </swiper-slide>
+
+          </ng-container>
+        </swiper-container>
+  </ng-container>
+</div>

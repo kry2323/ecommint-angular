@@ -1,0 +1,21 @@
+<ng-container *ngIf="product$ | async as product">
+  <div class="accordion-right-menu">
+      <ng-template ngbPanelContent>
+        <div class="tab-product-description" [innerHTML]="product.description"></div>
+        <a (click)="onShowDetailTab()" class="btn-show-more"></a>
+      </ng-template>
+      <ng-template ngbPanelHeader>
+        <button class="btn btn-link btn-notab" (click)="showInstallmentsTab()"> <i class="icon icon-combined-shape_7" ></i> </button>
+      </ng-template>
+     <ng-template ngbPanelHeader>
+       <button class="btn btn-link btn-notab" (click)="showFinInStoreTab()"><i class="icon-guarantee_4"><i class="path2"></i></i></button>
+     </ng-template>
+      <ng-template ngbPanelHeader>
+        <button class="btn btn-link btn-notab" ><i class="icon icon-combined-shape_14"></i></button>
+      </ng-template>
+
+  </div>
+</ng-container>
+
+ssadasd
+

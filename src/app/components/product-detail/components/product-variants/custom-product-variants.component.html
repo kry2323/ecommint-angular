@@ -1,0 +1,31 @@
+<ng-container *ngIf="product$ | async as product">
+  <ng-container *ngIf="product?.displayStatus === 'DISPLAY'">
+    <div class="variant-section" *ngIf="product.baseOptions?.length > 0">
+      
+    </div>
+    <ng-container >
+      <ng-container *ngIf="variants[variantType.SIZE]; else noVariantStockAlert">
+        <p
+        class="stock-info text-danger"
+        *ngIf="variants[variantType.SIZE]?.selected.stock.stockLevel <= lowStockAlert; else noVariantStockAlert"
+        ></p>
+      </ng-container>
+      <ng-template #noVariantStockAlert>
+        <p class="stock-info text-danger"
+        *ngIf="product.stock.stockLevel <= lowStockAlert"
+        ></p>
+      </ng-template>
+    </ng-container>
+
+    <!--<ng-container *ngIf="product.stock?.stockLevelStatus !== 'outOfStock'">
+      <ul class="estimated-shipment-date" *ngIf="!product.sameDayShipment && product.estimatedShipmentDate && isMagaza">
+          <li [innerHTML]="shipmentRegex(product.estimatedShipmentDate.formattedDate)"></li>
+      </ul>
+      <ul class="estimated-shipment-date" *ngIf="product.sameDayShipment && isMagaza">
+          <li [innerHTML]="product.estimatedShipmentDate.formattedDate"></li>
+      </ul>
+  </ng-container>-->
+  </ng-container>
+</ng-container>
+
+<div id="app"></div>

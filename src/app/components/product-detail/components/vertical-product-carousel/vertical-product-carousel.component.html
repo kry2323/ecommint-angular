@@ -1,0 +1,27 @@
+<div class="seg-container"></div>
+
+
+<ng-template #carouselItem let-item="item" class="day-opportunity">
+    <div *ngIf="item?.purchasable && item?.stock?.stockLevelStatus !== 'outOfStock'" [title]="item?.name" class="opportunity-content">
+        <a tabindex="0">
+            <cx-media
+                *ngIf="item?.images"
+                [container]="item.images"
+                [alt]="item.name"
+                format="product"
+                class="opportunity-image"
+            >
+            </cx-media>
+            <div class="opportunity-detail">
+                <span class="product-name">{{ item.name }}</span>
+                <div class="price">
+                    <div class="top" *ngIf="item.discountRate && item.discountRate >= 10">
+                        <span class="old-price" *ngIf="item.listPrice && item.listPrice.wholeNumber && item.listPrice.separator && item.listPrice.decimal && item.listPrice.currency">{{ item.listPrice.wholeNumber }}{{ item.listPrice.separator }}{{ item.listPrice.decimal }} {{ item.listPrice.currency }}</span>
+                        <span class="discount"></span>
+                    </div>
+                    <span class="current-price" *ngIf="item.price && item.price.wholeNumber && item.price.separator && item.price.decimal && item.price.currency">{{ item.price.wholeNumber }}{{ item.price.separator }}<em class="decimal">{{ item.price.decimal }}</em> <em class="ext">{{ item.price.currency }}</em></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</ng-template>

@@ -1,0 +1,41 @@
+.btn-notify {
+    width: 100%;
+    max-width: 285px;
+    border-color: var(--cx-color-primary);
+    color: var(--cx-color-primary);
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 3px;
+    padding: 6px 0;
+    font-family: "raleway", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-weight: bold;
+
+    &:hover, &:active, &:active:focus {
+        background-color: transparent !important;
+        border-color: var(--cx-color-primary) !important;
+        color: var(--cx-color-primary) !important;
+        box-shadow: none !important;
+    }
+
+    & > span {
+        display: block;
+        color: #494949;
+        font-size: 12px;
+        letter-spacing: 0.7px;
+        line-height: 15px;
+        font-family: 'ralewayregular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+        font-style: normal;
+    }
+}
+
+.cx-dialog-body {
+    padding: 0 !important;
+
+    cx-spinner {
+        zoom: 0.3;
+
+        ::ng-deep {
+            margin: 0;
+        }
+    }
+}

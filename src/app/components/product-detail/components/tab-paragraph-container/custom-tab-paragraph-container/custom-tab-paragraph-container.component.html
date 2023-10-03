@@ -1,0 +1,12 @@
+<ng-container *rxFor="let component of component$ ; let i = index">
+    <ng-container *rxLet="component">
+        <button  [class.active]=" i === (activeTabNum | push ) "  (click)="select(i)" class="btn-tab">
+            {{component.name}} 
+        </button>
+        <div>
+        <ng-container *rxIf="(activeTabNum | push ) === i" >
+            <ng-container [dynamicComponent]="component"></ng-container>
+        </ng-container>
+          </div>
+    </ng-container>
+</ng-container>

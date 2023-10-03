@@ -1,0 +1,38 @@
+.btn-tab {
+    color: #494949;
+    padding: 15px;
+    background-color: #fff;
+    border:none;
+    font-size:16px;
+    cursor: pointer;
+
+
+    &.active {
+      font-weight: bold;
+      font-weight: bold;
+      background: #f3f3f3;
+      border-top: 3px solid #ff6c0c;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding: 15px;
+    }
+
+    &:after {
+            background-color: var(--cx-color-text);
+      display: none;
+    }
+}
+  @media (min-width: 768px){
+  ::ng-deep ozd-custom-tab-paragraph-container > div, cx-tab-paragraph-container > div {
+  background: #f3f3f3;
+  border: none; 
+ }
+  }
+.active{
+  display: block;
+
+}
+.tab-paragraph{
+  display: flex;
+  flex-direction: column;
+}

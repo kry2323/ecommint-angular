@@ -1,0 +1,13 @@
+<ng-container *rxLet="data$;  let data">
+  <div class="container">
+    <a
+      [routerLink]="data.urlLink"
+      [title]="data.media?.altText"
+    >
+      <cx-media [container]="data.media" class="catagory-img" ></cx-media>
+      <div class="text-block">
+        <p *ngIf="data.content" [innerHTML]="data.content"></p>
+      </div>
+    </a>
+  </div>
+</ng-container>

@@ -1,0 +1,33 @@
+<ng-container *rxLet="product$;let product">
+  <ng-container>
+    <div class="campaign-button-list" *rxLet="product.badges.length > 0">
+        <ng-container>
+            <ng-container *ngFor="let item of product.badges; let i = index">
+              <ng-container *ngIf="item?.ribbon">
+                    <ng-container *ngIf="item.description">
+                        <div class="product-detail-badge-popover" [innerHTML]="item.description"></div>
+                    </ng-container>
+
+                <a [routerLink]="item.url" class="campaign-button" >
+                    <ng-container *ngIf="item.type === 'PROMOTION'; else shipmentIcon">
+                        <i class="icon icon-group-22">
+                            <i class="path1"></i>
+                            <i class="path2"></i>
+                        </i>
+                    </ng-container>
+                    <ng-template #shipmentIcon>
+                        <i class="icon icon-group-22_2">
+                            <i class="path1"></i>
+                            <i class="path2"></i>
+                        </i>
+                    </ng-template>
+                    <div class="col">
+                        <span >a</span>
+                    </div>
+                </a>
+              </ng-container>
+            </ng-container>
+        </ng-container>
+    </div>
+  </ng-container>
+</ng-container>

@@ -1,0 +1,51 @@
+<div class="head-card"  >
+  <div class="card-items" >
+    <i class="icon icon-combined-shape2"></i>
+    <span class="item">Sepetim</span>
+    <span class="count">0</span>
+  </div>
+  <div class="header-basket container " [ngClass]="status ? 'active' : ''">
+    <div>
+      <div class="other-products">
+        <a [routerLink]="'product'" title="" class="day-opportunity"
+           >
+          <div class="opportunity-content">
+            <figure class="opportunity-image"
+                   ></figure>
+            <div class="opportunity-detail">
+              <span class="product-name ellipsis-row-2"></span>
+              <span
+                class="product-quantity"><span></span></span>
+              <div class="price">
+                <span class="current-price"><em class="decimal"></em><em class="currency"></em></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="total-price">
+        <span class="text"></span>
+        <span class="current-price"><em class="decimal"></em><em class="currency"></em> </span>
+      </div>
+      <div class="free-cargo-info">
+        <div class="info-bar">
+          <i class="icon icon-combined-shape_14"></i>
+          <span></span>
+          
+          <div class="progress-bar">
+            <div class="progress-line"
+                 >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="button-list">
+      <a href="javascript:void(0)"  class="button"
+        ></a>
+      <a (click)="clickEvent()" [routerLink]="'cart'" class="button orange go-basket"
+         title=></a>
+    </div>
+  </div>
+</div>

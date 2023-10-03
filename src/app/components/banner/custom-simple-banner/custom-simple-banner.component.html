@@ -1,0 +1,8 @@
+<ng-container *rxLet="data$; let data">
+    <h1>
+        <a [routerLink]="data?.urlLink" [title]="data?.media?.altText">
+            <cx-media [container]="data?.media" [alt]="data?.media?.name"></cx-media>
+
+        </a>
+    </h1>
+</ng-container>

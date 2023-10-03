@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="brands-carousel">
+      <ng-container *rxLet="brands$; let brand">
+            <swiper-container
+            #swiperContainer3
+            init="false"
+            slides-per-view="6"
+            speed="500"
+            loop="true"
+            navigation="true">
+              <ng-container *rxFor="let item of brand">
+                  <swiper-slide lazy="true" >
+                    <a title="">
+                      <figure class="product-logo">
+                        <img [attr.data-src]="item?.image.url" class="load-lazy"  loading="lazy" appLazyLoad />
+                      </figure>
+                    </a>
+                  </swiper-slide>
+              </ng-container>
+            </swiper-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

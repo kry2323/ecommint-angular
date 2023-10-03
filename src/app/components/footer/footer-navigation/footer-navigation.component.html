@@ -1,0 +1,28 @@
+<div class="container">
+<ozd-navigation-ui
+        [node]="node$ | push"
+        [flyout]="false"
+        class="ozd-footer-navigation mobile-hidden"
+>
+</ozd-navigation-ui>
+
+<!-- <ng-container *rxLet="node$; let node ">
+  <ng-container *rxFor="let child of node ">
+    <div>
+      <span>{{child.title}}<i class="icon icon-combined-shape_21"></i></span>
+    </div>
+    <ng-container *rxFor="let children of child.children" >
+    <ul>
+      <li>
+        <ozd-generic-link
+          class="all"
+        >
+        {{children.title}}
+        </ozd-generic-link>
+      </li>
+    </ul>
+  </ng-container>
+  </ng-container>
+  </ng-container> -->
+
+</div>

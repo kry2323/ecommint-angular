@@ -1,0 +1,5 @@
+<ng-container *rxLet="components$; let components">
+  <ng-container *rxFor="let component of components">
+    <ng-container [dynamicComponent]="component"></ng-container>
+  </ng-container>
+</ng-container>

@@ -1,0 +1,46 @@
+<ng-container *ngIf="product$ | async as product">
+  <ng-container *ngIf="product?.displayStatus === 'DISPLAY'">
+    <ng-container *ngIf="outOfStock$ | async">
+      <ng-container *ngIf="!(hasProductInterests$ | async); else stopNotify">
+
+        <ng-container *ngIf="anonymous; else loggedIn">
+          <div class="stock-notification-notes">
+            <p class="mb-0">
+              <a></a>
+            </p>
+          </div>
+
+        </ng-container>
+
+        <ng-template #loggedIn>
+          <button class="btn btn-outline-primary btn-notify text-uppercase" (click)="subscribe()" type="button">
+            <span class="text-capitalize"></span>
+          </button>
+        </ng-template>
+
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #stopNotify>
+  <ng-container *ngIf="!(isRemoveInterestLoading$ | async); else loading">
+    <div class="stock-notification-notes">
+    </div>
+    <button
+      class="btn btn-primary btn-block btn-stop-notify"
+      type="button"
+      (click)="unsubscribe()"
+    >
+    </button>
+  </ng-container>
+</ng-template>
+
+<ng-template #loading>
+  <div class="cx-dialog-body modal-body">
+    <div class="cx-dialog-row row">
+      <div class="col-sm-12">
+      </div>
+    </div>
+  </div>
+</ng-template>
