@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../src/app/ozdstyle/components/footer-bottom.component.scss";
+@import "../src/app/ozdstyle/variables.scss";
+@import "../src/app/ozdstyle/header";
+@import "../src/app/ozdstyle/override.scss";
+@import "../src/app/ozdstyle/custom.scss";
+cx-page-layout.LandingPage2Template cx-page-slot{
+    --cx-flex-basis: calc(((100 / var(3)) * 1%) - ((var(20) * (var(3) - 1)) * 1px));
+    flex: 1 1 var(--cx-flex-basis,100%);
+}
+
+cx-page-layout.LandingPage2Template cx-page-slot.Section1{
+  --cx-flex-basis: calc(((100 / var(3)) * 1%) - ((var(20) * (var(3) - 1)) * 1px));
+  flex: 1 1 var(--cx-flex-basis,100%);
+
+  @media screen and (max-width:768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+}
+cx-page-layout cx-page-slot, cx-page-layout{
+     flex: 1 1 var(--cx-flex-basis,100%);
+}
+
+.TopHeaderSlot img {
+  min-height: 90px;
+}
+.MarketHeaderCenterFull{
+  height: 96px;
+  display: block;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
